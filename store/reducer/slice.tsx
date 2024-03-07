@@ -26,7 +26,10 @@ const Slice = createSlice({
       state.users.push(data);
     },
     removeUser: (state, action) => {
-      console.log(action);
+      const data = state.users.filter((item) => {
+        return item.id !== action.payload;
+      });
+      state.users=data
     },
   },
 });
